@@ -27,3 +27,9 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+
+## Stuff
+
+Requires puppet >2.7 <3 installed & confdir setting configured, rdoc gem installed
