@@ -8,9 +8,10 @@ module PuppetParse
       output = {}
       files.each do |file|
         content          = PuppetParse::Parser.new(file)
+        parameters = (defined? content.parameters) ? content.parameters.paramflat : nil
         result           = {
           content.klass  => {
-            'parameters' => content.parameters.paramflat,
+            'parameters' => parameters,
             'docs'       => content.docs
           }
         }
