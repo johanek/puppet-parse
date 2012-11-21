@@ -8,6 +8,7 @@ module PuppetParse
       output = {}
       files.each do |file|
         content          = PuppetParse::Parser.new(file)
+        next if content.instance_variable_get('@object').nil? 
         parameters = (defined? content.parameters) ? content.parameters.paramflat : nil
         result           = {
           content.klass  => {
@@ -17,7 +18,6 @@ module PuppetParse
         }
         output = output.merge(result)
       end
-      
       output
     end
     
