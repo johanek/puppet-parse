@@ -14,31 +14,34 @@ module PuppetParse
     # Read parameters from parsed object, returns hash of parameters and default 
     # values
     def parameters
-      @object.last.arguments
+      result = (defined? @object.class.arguments) ? @object.class.arguments : {}
+      result
     end
 
     # Read class from parsed object, returns string containing class
     def klass
-      @object.last.name
+      @object.last.name if (defined? @object.class.name)
     end
 
     # Read RDOC contents from parsed object, returns hash of paragraph headings
     # and the following paragraph contents 
     #(i.e. parameter and parameter documentation)
     def docs
-      rdoc            = RDoc::Markup.parse(@object.last.doc)
-      docs            = {}
+      if !@object.last.doc.nil?
+        rdoc            = RDoc::Markup.parse(@object.last.doc)
+        docs            = {}
 
-      rdoc.parts.each do |part|
-        if part.respond_to?(:items)
-          part.items.each do |item|
-            key       = item.label.tr('^A-Za-z0-9_-', '')
-            docs[key] = item.parts.first.parts
-          end # do item
-        end # endif
-      end # do parm
+        rdoc.parts.each do |part|
+          if part.respond_to?(:items)
+            part.items.each do |item|
+              key       = item.label.tr('^A-Za-z0-9_-', '')
+              docs[key] = item.parts.first.parts
+            end # do item
+          end # endif
+        end # do parm
   
-      docs
+        docs
+      end # if nil?
     end # def docs
 
   end # class Parser
