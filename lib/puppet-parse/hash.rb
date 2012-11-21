@@ -4,7 +4,7 @@ class Hash
     result = {}
 
     self.each do |key, val|
-      result[key] = val.value
+      result[key] = (defined? val.value) ? val.value : nil
     end
 
     result
