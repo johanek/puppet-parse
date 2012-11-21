@@ -5,7 +5,11 @@ module PuppetParse
       # Read file and return parsed object
       pparser         = Puppet::Parser::Parser.new('production')
       if File.exists?(file)
-        @object       = pparser.import(file)
+        @file = File.expand_path(file)
+        pparser.import(@file)
+        pparser.environment.known_resource_types.hostclasses.each do |x|
+          @object = x.last if x.last.file == @file
+        end
       else
         'File does not exist'
       end
@@ -20,15 +24,15 @@ module PuppetParse
 
     # Read class from parsed object, returns string containing class
     def klass
-      @object.last.name if (defined? @object.class.name)
+      @object.name if (defined? @object.class.name)
     end
 
     # Read RDOC contents from parsed object, returns hash of paragraph headings
     # and the following paragraph contents 
     #(i.e. parameter and parameter documentation)
     def docs
-      if !@object.last.doc.nil?
-        rdoc            = RDoc::Markup.parse(@object.last.doc)
+      if !@object.doc.nil?
+        rdoc            = RDoc::Markup.parse(@object.doc)
         docs            = {}
 
         rdoc.parts.each do |part|
