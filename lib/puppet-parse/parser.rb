@@ -45,6 +45,8 @@ module PuppetParse
         rdoc.parts.each do |part|
           if part.respond_to?(:items)
             part.items.each do |item|
+              # Skip rdoc items that don't 
+              next unless (item.parts.to_s.scan("RDoc::Markup::Paragraph") == ["RDoc::Markup::Paragraph"])
               key       = item.label.tr('^A-Za-z0-9_-', '')
               docs[key] = item.parts.first.parts
             end # do item
