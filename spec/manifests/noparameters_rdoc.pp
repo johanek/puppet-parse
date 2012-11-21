@@ -1,4 +1,4 @@
-# = Class: test
+# = Class: noparameters_rdoc
 #
 # A class for testing puppet-parse
 #
@@ -10,6 +10,6 @@
 #
 # [*param_one*]
 #    Param1 documentation text
-class test {
+class noparameters_rdoc {
   # no content
 }

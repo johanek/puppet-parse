@@ -1,4 +1,4 @@
-# = Define: test
+# = Define: define_rdoc
 #
 # A define for testing puppet-parse
 #
@@ -10,7 +10,7 @@
 #
 # [*param_one*]
 #    Param1 documentation text
-define test (
+define define_rdoc (
   $param_one = true,
   $param_two = '',
   $param_three = $::fqdn,
