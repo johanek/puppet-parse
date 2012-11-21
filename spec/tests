@@ -1,0 +1,13 @@
+classes should have a name
+parameters should be set
+every parameter should have a value
+docs should be set
+every doc key should have a value
+
+a sample file with parameters & rdoc should work
+a sample file with parameters & no rdoc should work
+a sample file with no parameters & rdoc should work
+a sample file with no parameters & no rdoc should work
+a sample file with no class should work
+a sample file with define and rdoc should work
+a sample file with define and no rdoc should work
