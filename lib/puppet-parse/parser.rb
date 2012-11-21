@@ -7,18 +7,25 @@ module PuppetParse
       if File.exists?(file)
         @file = File.expand_path(file)
         pparser.import(@file)
+        
+        # Find object in list of hostclasses
         pparser.environment.known_resource_types.hostclasses.each do |x|
           @object = x.last if x.last.file == @file
         end
+        # Find object in list of definitions
+        pparser.environment.known_resource_types.definitions.each do |x|
+          @object = x.last if x.last.file == @file
+        end
+        
       else
         'File does not exist'
-      end
+      end      
     end
 
     # Read parameters from parsed object, returns hash of parameters and default 
     # values
     def parameters
-      result = (defined? @object.class.arguments) ? @object.class.arguments : {}
+      result = (defined? @object.arguments) ? @object.arguments : {}
       result
     end
 
