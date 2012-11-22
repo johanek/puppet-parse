@@ -1,17 +1,11 @@
 # -*- encoding: utf-8 -*-
 require File.expand_path('../lib/puppet-parse/version', __FILE__)
 
-if ENV.key?('PUPPET_VERSION')
-  puppetversion = "= #{ENV['PUPPET_VERSION']}"
-else
-  puppetversion = ['>= 2.7']
-end
-
 Gem::Specification.new do |gem|
   gem.authors       = ["Johan van den Dorpe"]
   gem.email         = ["johan.vandendorpe@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Parse Puppet modules for classes, defines, parameters and documentation}
+  gem.summary       = %q{Parser for Puppet Modules. Returns Information about available classes and defines, their parameters, and documentation for those parameters.}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
