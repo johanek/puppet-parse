@@ -1,4 +1,4 @@
-# Puppet::Parser
+# Puppet::Parse
 
 TODO: Write a gem description
 
