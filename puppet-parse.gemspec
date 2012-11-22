@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["johan.vandendorpe@gmail.com"]
   gem.description   = %q{Parse Puppet modules for classes, defines, parameters and documentation}
   gem.summary       = %q{Parser for Puppet Modules. Returns Information about available classes and defines, their parameters, and documentation for those parameters.}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/johanek/puppet-parse"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
