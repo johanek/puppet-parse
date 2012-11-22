@@ -40,8 +40,3 @@ You can do any of these:
 3. Write me an email
 4. Complain about how useless my code is on twitter
 
-
-
-## Stuff
-
-Requires puppet >2.7 <3 installed & confdir setting configured, rdoc gem installed
