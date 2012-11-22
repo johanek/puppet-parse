@@ -1,5 +1,7 @@
 # Puppet::Parse
 
+[![Build Status](https://travis-ci.org/johanek/puppet-parse.png)](https://travis-ci.org/[YOUR_GITHUB_USERNAME]/[YOUR_PROJECT_NAME])
+
 TODO: Write a gem description
 
 ## Installation
