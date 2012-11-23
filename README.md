@@ -10,10 +10,8 @@ Analyse puppet manifests and report what classes and defines are specified, and 
 
 ## Requirements
 
-    puppet >2.7, <3.0
     rdoc
-
-I think there's a bug in Puppet 3.0 which is breaking things. So don't use with Puppet 3.0 yet.
+    facter
 
 ## Usage
 
