@@ -25,6 +25,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
   gem.add_runtime_dependency "rdoc"
-  gem.add_runtime_dependency "puppet", puppetversion
 
 end
