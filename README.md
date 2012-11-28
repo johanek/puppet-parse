@@ -21,7 +21,6 @@ You can test one or more manifests by running
 
     puppet-parse <path(s) to file(s)>
 
-
 ### Rake tast
 
 If you want to parse your entire modules directory, you can add
