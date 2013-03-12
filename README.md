@@ -10,23 +10,41 @@ Analyse puppet manifests and report what classes and defines are specified, and 
 
 ## Requirements
 
-    rdoc
+    rdoc >=3.12, <4.0
     facter
 
 ## Usage
 
 ### By hand
 
-You can test one or more manifests by running
+You can report on one or more manifests by running
 
     puppet-parse <path(s) to file(s)>
 
-### Rake tast
+### Rake task
 
 If you want to parse your entire modules directory, you can add
 `require 'puppet-parse/puppet-parse' to your Rakefile and then run
 
     rake parse
+
+## Sample Output
+
+    --- 
+      ntp: 
+        parameters: 
+          enabled: true
+          present: true
+          enableboot: true
+        docs: 
+          enabled: 
+            - "Set to 'false' to stop service"
+          present: 
+            - "Set to 'false' to remove package"
+          enableboot: 
+            - "Set to 'false' to prevent service starting at boot"
+
+
 
 ## Contributing
 
