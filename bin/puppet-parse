@@ -4,6 +4,8 @@ $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), "..", "lib
 require 'puppet-parse'
 require 'yaml'
 
+abort 'puppet-parse: no arguments given ' if ARGV[0].nil?
+
 run = PuppetParse::Runner.new
 puts run.run(ARGV).to_yaml
 
