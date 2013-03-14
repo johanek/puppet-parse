@@ -28,6 +28,12 @@ If you want to parse your entire modules directory, you can add
 
     rake parse
 
+If you need to ignore certain paths from being parsed:
+
+``` ruby
+PuppetParse.configuration.ignore_paths = ["vendor/**/*.pp"]
+```
+
 ## Sample Output
 
     --- 
