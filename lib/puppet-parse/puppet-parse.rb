@@ -1,6 +1,4 @@
 
-$LOAD_PATH.unshift File.expand_path('/vagrant/puppet-parser/lib')
-
 require 'puppet-parse'
 require 'rake'
 require 'rake/tasklib'
