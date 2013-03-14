@@ -1,4 +1,4 @@
-module PuppetParse
+class PuppetParse
   class Parser
 
     def initialize(file)

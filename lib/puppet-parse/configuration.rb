@@ -1,4 +1,4 @@
-module PuppetParse
+class PuppetParse
   class Configuration
 
     # Code blatently stolen from https://github.com/rodjek/puppet-lint
