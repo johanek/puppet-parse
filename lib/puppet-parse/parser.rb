@@ -7,7 +7,7 @@ class PuppetParse
       if File.exists?(file)
         @file = File.expand_path(file)
         pparser.import(@file)
-        
+
         # Find object in list of hostclasses
         pparser.environment.known_resource_types.hostclasses.each do |x|
           @object = x.last if x.last.file == @file
@@ -16,13 +16,13 @@ class PuppetParse
         pparser.environment.known_resource_types.definitions.each do |x|
           @object = x.last if x.last.file == @file
         end
-        
+
       else
         'File does not exist'
-      end      
+      end
     end
 
-    # Read parameters from parsed object, returns hash of parameters and default 
+    # Read parameters from parsed object, returns hash of parameters and default
     # values
     def parameters
       result = (defined? @object.arguments) ? @object.arguments : {}
@@ -35,7 +35,7 @@ class PuppetParse
     end
 
     # Read RDOC contents from parsed object, returns hash of paragraph headings
-    # and the following paragraph contents 
+    # and the following paragraph contents
     #(i.e. parameter and parameter documentation)
     def docs
       if !@object.doc.nil?
@@ -54,10 +54,8 @@ class PuppetParse
             end # do item
           end # endif
         end # do parm
-  
         docs
       end # if nil?
     end # def docs
-
   end # class Parser
 end # module PuppetParse
