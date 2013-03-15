@@ -6,12 +6,12 @@ require 'yaml'
 
 abort 'puppet-parse: no arguments given ' if ARGV[0].nil?
 
-run = PuppetParse::Runner.new
+runner = PuppetParse::Runner.new
 
 path = ARGV[0]
 if File.directory?(path)
   puppet_files = Dir.glob("#{path}/**/*.pp")
-  puts run.run(puppet_files.to_a).to_yaml
+  puts runner.run(puppet_files.to_a).to_yaml
 else
-  puts run.run(ARGV).to_yaml
+  puts runner.run(ARGV).to_yaml
 end
