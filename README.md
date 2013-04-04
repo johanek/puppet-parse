@@ -13,6 +13,12 @@ Analyse puppet manifests and report what classes and defines are specified, and 
     rdoc >=3.12, <4.0
     facter
 
+## Supported Platforms
+
+puppet-parse only works on Unix like platforms such as Linux and MacOSX.
+
+Windows is not supported.
+
 ## Usage
 
 ### By hand
