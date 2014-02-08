@@ -1,4 +1,3 @@
-$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), "vendor"))
 require 'puppet'
 require 'puppet-parse/version'
 require 'puppet-parse/parser'
