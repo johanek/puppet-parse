@@ -3,6 +3,7 @@ class PuppetParse
 
     def initialize(file)
       # Read file and return parsed object
+      Puppet.initialize_settings unless Puppet.settings.app_defaults_initialized?
       pparser         = Puppet::Parser::Parser.new('production')
       if File.exists?(file)
         @file = File.expand_path(file)

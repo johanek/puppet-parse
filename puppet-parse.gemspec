@@ -15,10 +15,12 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = PuppetParse::VERSION
 
-  gem.add_development_dependency "rspec"
-  gem.add_development_dependency "rake"
   gem.add_runtime_dependency "rdoc", ">=3.12", "<4.0"
+  gem.add_runtime_dependency "puppet", "~> 3.2.1"
   gem.add_runtime_dependency "facter"
+
+  gem.add_development_dependency "rspec", "~> 2.14.1"
+  gem.add_development_dependency "rake", "~> 10.1.1"
 
 
 end
