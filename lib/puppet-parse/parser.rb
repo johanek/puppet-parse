@@ -48,8 +48,10 @@ class PuppetParse
               # Skip rdoc items that aren't paragraphs
               next unless (item.parts.to_s.scan("RDoc::Markup::Paragraph") == ["RDoc::Markup::Paragraph"])
               # Documentation must be a list - if there's no label then skip
-              next if item.label.nil?
-              key       = item.label.tr('^A-Za-z0-9_-', '')
+              label = item.label
+              next if label.nil?
+              key       = label.is_a?(Array) ? label.first : label
+              key       = key.tr('^A-Za-z0-9_-', '')
               docs[key] = item.parts.first.parts
             end # do item
           end # endif
