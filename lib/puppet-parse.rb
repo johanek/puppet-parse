@@ -5,7 +5,7 @@ require 'puppet-parse/parser'
 require 'puppet-parse/runner'
 require 'puppet-parse/hash'
 require 'puppet-parse/configuration'
-gem 'rdoc'
+gem 'rdoc', '>=3.12', '<4.0'
 require 'rdoc'
 
 class PuppetParse
