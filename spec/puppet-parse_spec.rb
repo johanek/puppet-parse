@@ -39,28 +39,28 @@ end
 shared_examples "parameters" do |file, klass|
   subject { setup(file) }
   it 'parameters should have four keys' do
-    subject[klass]['parameters'].should have(4).keys
+    expect(subject[klass]['parameters'].keys.size).to eq(4)
   end
 end
 
 shared_examples "no parameters" do |file, klass|
   subject { setup(file) }
   it 'parameters should have no keys' do
-    subject[klass]['parameters'].should have(0).keys
+    expect(subject[klass]['parameters'].keys.size).to eq(0)
   end
 end
 
 shared_examples "rdoc" do |file, klass|
   subject { setup(file) }
   it 'docs should have one key' do
-    subject[klass]['docs'].should have(1).keys
+    expect(subject[klass]['docs'].keys.size).to eq(1)
   end
 end
 
 shared_examples "no rdoc" do |file, klass|
   subject { setup(file) }
   it 'docs should have no keys' do
-    subject[klass]['docs'].should have(0).keys
+    expect(subject[klass]['docs'].keys.size).to eq(0)
   end
 end
 
@@ -127,7 +127,7 @@ describe "parameter with array" do
 
   it 'parameters param_one should be an array' do
     subject['array_parameters']['parameters']['param_one'].should be_a(Array)
-    subject['array_parameters']['parameters']['param_one'].should have(2).items
+    expect(subject['array_parameters']['parameters']['param_one'].size).to eq(2)
   end
 
 end
