@@ -120,3 +120,14 @@ describe "noclass" do
   end
   
 end
+
+describe "parameter with array" do
+  file = 'spec/manifests/array_parameters.pp'
+  subject { setup(file) }
+
+  it 'parameters param_one should be an array' do
+    subject['array_parameters']['parameters']['param_one'].should be_a(Array)
+    subject['array_parameters']['parameters']['param_one'].should have(2).items
+  end
+
+end
