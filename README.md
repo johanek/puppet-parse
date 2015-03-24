@@ -1,6 +1,6 @@
 # puppet-parse
 
-[![Build Status](https://travis-ci.org/johanek/puppet-parse.png)](http://travis-ci.org/johanek/puppet-parse)
+[![Build Status](https://travis-ci.org/johanek/puppet-parse.png?branch=master)](http://travis-ci.org/johanek/puppet-parse)
 
 Analyse puppet manifests and report what classes and defines are specified, and their parameters and parameter documentation.
 
