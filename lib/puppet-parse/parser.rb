@@ -1,3 +1,5 @@
+require 'pry'
+
 class PuppetParse
   class Parser
 
@@ -39,10 +41,12 @@ class PuppetParse
     #(i.e. parameter and parameter documentation)
     def docs
       if !@object.doc.nil?
-        rdoc            = RDoc::Markup.parse(@object.doc)
+        #rdoc            = RDoc::Markup.parse(@object.doc)
+        rdoc            = RDoc::Markup.parse(File.read(@file))
         docs            = {}
 
         rdoc.parts.each do |part|
+              binding.pry
           if part.respond_to?(:items)
             part.items.each do |item|
               # Skip rdoc items that aren't paragraphs

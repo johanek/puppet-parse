@@ -111,6 +111,14 @@ describe "define with no rdoc" do
   it_should_behave_like "no rdoc", file, klass    
 end
 
+describe "manifest with hash" do
+    file = 'spec/manifests/code_with_hash.pp'
+    klass = 'code_with_hash'
+    it_should_behave_like "standard tests", file, klass
+    it_should_behave_like "parameters", file, klass
+    it_should_behave_like "rdoc", file, klass    
+end 
+
 describe "noclass" do
   file = 'spec/manifests/noclass.pp'
   subject { setup(file) }
