@@ -34,6 +34,11 @@ class PuppetParse
       @object.name if (defined? @object.class.name)
     end
 
+    # Read type from parsed object, returns symbol containing type (hostclass, definition, node)
+    def type
+      @object.type if (defined? @object.type)
+    end
+
     # Read RDOC contents from parsed object, returns hash of paragraph headings
     # and the following paragraph contents
     #(i.e. parameter and parameter documentation)

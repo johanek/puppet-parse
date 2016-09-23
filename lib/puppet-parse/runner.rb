@@ -13,7 +13,8 @@ class PuppetParse
         result           = {
           content.klass  => {
             'parameters' => parameters,
-            'docs'       => content.docs
+            'docs'       => content.docs,
+            'type'       => content.type.to_s,
           }
         }
         output = output.merge(result)
